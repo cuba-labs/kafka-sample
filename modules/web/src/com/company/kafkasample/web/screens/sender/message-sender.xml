@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://messageSender.caption"
+        messagesPack="com.company.kafkasample.web.screens.sender">
+    <actions>
+        <action id="sendMsg" caption="msg://send.message" icon="SEND"/>
+    </actions>
+    <dialogMode closeable="true" forceDialog="true" height="AUTO" modal="true" width="300px"/>
+    <layout>
+        <vbox width="100%" margin="10px" spacing="true">
+            <textArea id="messageText" width="100%" height="60px"/>
+            <button align="BOTTOM_CENTER" action="sendMsg"/>
+        </vbox>
+    </layout>
+</window>

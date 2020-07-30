@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-kafkasample" insertBefore="administration">
+        <item screen="kafkasample_KafkaMessage.browse" caption="mainMsg://menu_config.kafkasample_KafkaMessage.browse"/>
+        <item screen="kafkasample_MessageSender" caption="mainMsg://menu_config.kafkasample_MessageSender"/>
+    </menu>
+</menu-config>

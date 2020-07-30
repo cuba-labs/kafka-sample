@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://kafkaMessageBrowse.caption"
+        focusComponent="kafkaMessagesTable"
+        messagesPack="com.company.kafkasample.web.screens.kafkamessage">
+    <data readOnly="true">
+        <collection id="kafkaMessagesDc"
+                    class="com.company.kafkasample.entity.KafkaMessage">
+            <view extends="_local"/>
+            <loader id="kafkaMessagesDl">
+                <query>
+                    <![CDATA[select e from kafkasample_KafkaMessage e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="kafkaMessagesTable"
+            spacing="true">
+        <groupTable id="kafkaMessagesTable"
+                    width="100%"
+                    dataContainer="kafkaMessagesDc">
+            <actions>
+                <action id="refresh" type="refresh"/>
+                <action id="excel" type="excel"/>
+            </actions>
+            <columns>
+                <column id="kafkaID"/>
+                <column id="content"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="refreshBtn" action="kafkaMessagesTable.refresh"/>
+                <button id="excelBtn" action="kafkaMessagesTable.excel"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>
